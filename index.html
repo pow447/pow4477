@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Release Submission Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+    <h1 class="text-2xl font-bold mb-6 text-center">Music Release Submission</h1>
+    <form id="uploadForm" method="post" enctype="multipart/form-data" class="space-y-4">
+      <!-- Artist Name (Dynamic) -->
+      <div id="artistFields">
+        <div class="artist-group flex items-center space-x-2">
+          <input type="text" name="artistName[]" placeholder="Artist Name" class="w-full p-2 border rounded" required>
+          <button type="button" class="remove-artist bg-red-500 text-white px-2 py-1 rounded hidden">-</button>
+        </div>
+      </div>
+      <button type="button" id="addArtist" class="bg-blue-500 text-white px-4 py-2 rounded">Add Another Artist</button>
+
+      <!-- Release Title -->
+      <div>
+        <input type="text" name="releaseTitle" placeholder="Release Title" class="w-full p-2 border rounded" required>
+      </div>
+
+      <!-- Label Name -->
+      <div>
+        <input type="text" name="labelName" placeholder="Label Name" class="w-full p-2 border rounded" required>
+      </div>
+
+      <!-- Image Upload -->
+      <div>
+        <label class="block text-sm font-medium">Cover Image</label>
+        <input type="file" name="coverImage" accept="image/*" class="w-full p-2 border rounded" required>
+      </div>
+
+      <!-- Track Uploads -->
+      <div id="trackFields" class="space-y-2">
+        <div>
+          <label class="block text-sm font-medium">Track 1</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded" required>
+        </div>
+        <!-- Tracks 2-10 (Initially hidden) -->
+        <div class="track-group hidden">
+          <label class="block text-sm font-medium">Track 2</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded">
+        </div>
+        <div class="track-group hidden">
+          <label class="block text-sm font-medium">Track 3</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded">
+        </div>
+        <div class="track-group hidden">
+          <label class="block text-sm font-medium">Track 4</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded">
+        </div>
+        <div class="track-group hidden">
+          <label class="block text-sm font-medium">Track 5</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded">
+        </div>
+        <div class="track-group hidden">
+          <label class="block text-sm font-medium">Track 6</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded">
+        </div>
+        <div class="track-group hidden">
+          <label class="block text-sm font-medium">Track 7</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded">
+        </div>
+        <div class="track-group hidden">
+          <label class="block text-sm font-medium">Track 8</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded">
+        </div>
+        <div class="track-group hidden">
+          <label class="block text-sm font-medium">Track 9</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded">
+        </div>
+        <div class="track-group hidden">
+          <label class="block text-sm font-medium">Track 10</label>
+          <input type="file" name="tracks[]" accept="audio/*" class="w-full p-2 border rounded">
+        </div>
+      </div>
+      <button type="button" id="addTrack" class="bg-blue-500 text-white px-4 py-2 rounded">Add Another Track</button>
+
+      <!-- Submit Button -->
+      <button type="submit" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Submit Release</button>
+    </form>
+  </div>
+  <script src="form.js"></script>
+</body>
+</html>
